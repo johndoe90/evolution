@@ -20,6 +20,8 @@
   },
   "homepage": "https://github.com/johndoe90/evolution",
   "devDependencies": {
+    "bower": "^1.4.1",
+    "closure-compiler": "^0.2.6",
     "gulp": "^3.8.11",
     "gulp-closure-compiler": "^0.2.19",
     "gulp-plumber": "^1.0.0"
