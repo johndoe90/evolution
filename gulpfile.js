@@ -6,17 +6,17 @@ gulp.task('compile', function() {
 	return gulp.src('app/app.module.js')
 		.pipe(plumber())
 		.pipe(compiler({
-			compilerPath: 'node_modules/closure-compiler/lib/vendor/compiler.jar',
+			compilerPath: 'closure-compiler/compiler.jar',
 			fileName: 'build.js',
 			compilerFlags: {
 				compilation_level: 'ADVANCED_OPTIMIZATIONS',
 				language_in: 'ECMASCRIPT5_STRICT',
 				angular_pass: true,
 				externs: [
-					'externs/angular.js',
-					'externs/angular-q.js',
-					'externs/angular-http-promise.js',
-					'externs/angular-mocks.js'
+					'closure-compiler/externs/angular.js',
+					'closure-compiler/externs/angular-q.js',
+					'closure-compiler/externs/angular-http-promise.js',
+					'closure-compiler/externs/angular-mocks.js'
 				], 
 				generate_exports: true,
 				manage_closure_dependencies: true,
