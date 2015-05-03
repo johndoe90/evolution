@@ -1,7 +1,5 @@
 'use strict';
 
-goog.require('pf.Test21');
-
 var app = angular.module('evolution', []);
 
 app.controller('testController', ['$scope', function($scope) {

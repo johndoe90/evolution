@@ -21,11 +21,15 @@ gulp.task('express', function() {
 	lr.listen(35729);
 });
 
-gulp.task('closure-depswriter', shell.task([
-	'./closure/closure-library/closure/bin/build/depswriter.py ' + 
-	'--root_with_prefix="app ../../../../../app" ' + 
-	'> app/deps.js'
-]));
+gulp.task('closure-depswriter', function() {
+	gulp.src('')
+		.pipe(plumber())
+		.pipe(shell([
+			'./closure/closure-library/closure/bin/build/depswriter.py ' + 
+			'--root_with_prefix="app ../../../../../app" ' + 
+			'--output_file app/deps.js'
+		]));
+});
 
 gulp.task('closure-compiler', function() {
 	var sources = glob.sync([
@@ -47,6 +51,7 @@ gulp.task('closure-compiler', function() {
 			'--externs closure/closure-compiler/contrib/externs/angular-1.3-mocks.js ' +
 			'--generate_exports ' +
 			'--manage_closure_dependencies ' +
+			'--warning_level VERBOSE ' +
 			'--js closure/closure-library/closure/goog/base.js ' +
 			'--js <%= sources %> ' +
 			'--js_output_file dist/build.js'

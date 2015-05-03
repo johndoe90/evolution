@@ -2,4 +2,3 @@
 // Please do not edit.
 goog.addDependency('../../../../../app/assets/js/pf/observable.js', ['pf.interface.Observable'], ['pf.interface.Observer'], false);
 goog.addDependency('../../../../../app/assets/js/pf/observer.js', ['pf.interface.Observer'], [], false);
-goog.addDependency('../../../../../app/test.js', ['pf.Test'], ['pf.interface.Observer'], false);
