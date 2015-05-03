@@ -1,0 +1,1 @@
+'use strict';angular.module("evolution",[]).controller("testController",["$scope",function(a){console.log("instatiate controller");console.log("3 is a number: true");a.click=function(){console.log("HUU")};a.name="Phillip"}]);

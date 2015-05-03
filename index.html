@@ -1,0 +1,21 @@
+<!doctype html>
+
+<html>
+	<head>
+		<title>Evolution</title>
+
+		<!-- inject:js -->
+		<script src="/closure/closure-library/closure/goog/base.js"></script>
+		<script src="/node_modules/angular/angular.js"></script>
+		<script src="/app/deps.js"></script>
+		<script src="/app/app.module.js"></script>
+		<!-- endinject -->
+	</head>
+
+	<body ng-app="evolution">
+		
+		<div ng-controller="testController" ng-click="click()">
+			{{name}}
+		</div>
+	</body>
+</html>
