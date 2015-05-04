@@ -49,6 +49,7 @@ gulp.task('closure-compiler', function() {
 			'--externs closure/closure-compiler/contrib/externs/angular-1.3-q.js ' +
 			'--externs closure/closure-compiler/contrib/externs/angular-1.3-http-promise.js ' +
 			'--externs closure/closure-compiler/contrib/externs/angular-1.3-mocks.js ' +
+			'--externs closure/closure-compiler/contrib/externs/angular_ui_router.js ' + 
 			'--generate_exports ' +
 			'--manage_closure_dependencies ' +
 			'--warning_level VERBOSE ' +
@@ -68,6 +69,7 @@ gulp.task('inject', function() {
 	var sources = gulp.src([
 		'closure/closure-library/closure/goog/base.js',
 		'node_modules/angular/angular.js',
+		'node_modules/angular-ui-router/release/angular-ui-router.js',
 		'app/deps.js',
 		'app/app.module.js'
 	], {read: false});

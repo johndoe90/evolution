@@ -1,6 +1,23 @@
 'use strict';
 
-var app = angular.module('evolution', []);
+
+angular.module('evolution', [
+	'ui.router'
+])
+.config(config);
+
+/**
+ * Configuration
+ * @param {ui.router.$urlRouterProvider} $urlRouterProvider
+ * @ngInject
+ */
+function config($urlRouterProvider) {
+	console.log('CONFIG');
+	console.log('otherwise' in $urlRouterProvider);
+}
+
+
+/*var app = angular.module('evolution', []);
 
 app.controller('testController', ['$scope', function($scope) {
 
@@ -14,4 +31,4 @@ app.controller('testController', ['$scope', function($scope) {
 	};
 
 	$scope.name = 'Phillip';
-}]);
+}]);*/

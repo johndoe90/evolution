@@ -1,1 +1,1 @@
-'use strict';angular.module("evolution",[]).controller("testController",["$scope",function(a){console.log("instatiate controller");console.log("3 is a number: true");a.click=function(){console.log("HUU")};a.name="Phillip"}]);
+'use strict';angular.module("evolution",["ui.router"]).config(a);function a(b){console.log("CONFIG");console.log("otherwise"in b)}a.$inject=["$urlRouterProvider"];
