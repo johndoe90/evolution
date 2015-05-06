@@ -1,8 +1,10 @@
 'use strict';
 
+goog.require('evolution.states.module');
 
 angular.module('evolution', [
-	'ui.router'
+	'ui.router',
+	'evolution.states.module'
 ])
 .config(config);
 
@@ -15,20 +17,3 @@ function config($urlRouterProvider) {
 	console.log('CONFIG');
 	console.log('otherwise' in $urlRouterProvider);
 }
-
-
-/*var app = angular.module('evolution', []);
-
-app.controller('testController', ['$scope', function($scope) {
-
-	console.log('instatiate controller');
-
-	console.log('3 is a number: ' + goog.isNumber(3));
-
-	
-	$scope.click = function() {
-		console.log('HUU');
-	};
-
-	$scope.name = 'Phillip';
-}]);*/
