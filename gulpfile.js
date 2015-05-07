@@ -27,8 +27,10 @@ gulp.task('closure-depswriter', function() {
 		.pipe(shell([
 			'./closure/closure-library/closure/bin/build/depswriter.py ' + 
 			'--root_with_prefix="app ../../../../../app" ' + 
-			'--output_file app/deps.js'
-		]));
+			'--output_file app/deps.js',
+
+			'node ./bin/createDepsFileLoader.js'
+		]}));
 });
 
 gulp.task('closure-compiler', function() {
@@ -71,6 +73,7 @@ gulp.task('inject', function() {
 		'node_modules/angular/angular.js',
 		'node_modules/angular-ui-router/release/angular-ui-router.js',
 		'app/deps.js',
+		'app/test.js',
 		'app/app.module.js'
 	], {read: false});
 

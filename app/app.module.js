@@ -4,7 +4,7 @@ goog.require('evolution.states.module');
 
 angular.module('evolution', [
 	'ui.router',
-	'evolution.states.module'
+	evolution.states.module.name
 ])
 .config(config);
 
