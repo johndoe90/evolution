@@ -2,5 +2,7 @@
 
 goog.require('pf.interface.Observable');
 goog.require('pf.interface.Observer');
+goog.require('pf.Clock');
+goog.require('pf.Clock.module');
 goog.require('evolution.states.module');
 goog.require('evolution.states.firstController');

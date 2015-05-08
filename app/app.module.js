@@ -1,10 +1,12 @@
 'use strict';
 
+goog.require('pf.Clock.module');
 goog.require('evolution.states.module');
 
 angular.module('evolution', [
 	'ui.router',
-	evolution.states.module.name
+	evolution.states.module.name,
+	pf.Clock.module.name
 ])
 .config(config);
 
@@ -14,6 +16,5 @@ angular.module('evolution', [
  * @ngInject
  */
 function config($urlRouterProvider) {
-	console.log('CONFIG');
-	console.log('otherwise' in $urlRouterProvider);
+	console.log('DONE');
 }

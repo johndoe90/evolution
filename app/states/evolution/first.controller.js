@@ -5,8 +5,9 @@ goog.provide('evolution.states.firstController');
 
 /**
  * @constructor
+ * @ngInject
  */
-evolution.states.firstController = function() {
+evolution.states.firstController = function(clock) {
 	
 	/**
 	 * Test Variable

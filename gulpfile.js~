@@ -88,8 +88,7 @@ gulp.task('jshint', function() {
 			globals: {
 				'angular': false,
 				'goog': false,
-				'evolution': true,
-				'pf': true
+				'evolution': true
 			},
 			globalstrict: true
 		}))

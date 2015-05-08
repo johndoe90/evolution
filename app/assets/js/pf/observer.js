@@ -7,10 +7,10 @@ goog.provide('pf.interface.Observer');
  * from it.
  * @interface
  */
-function Observer() {}
+pf.interface.Observer = function() {};
 
 /**
  * Is called by the subject to notify the observer about a change.
  * @param {Object} data
  */
-Observer.prototype.notify = function(data) {};
+pf.interface.Observer.prototype.notify = function(data) {};

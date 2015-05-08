@@ -6,7 +6,6 @@ goog.require('evolution.states.firstController');
 
 /**
  * Module for all states of the evolution app
- * 
  */
 evolution.states.module = angular.module('evolution.states.module', ['ui.router']);
 

@@ -2,5 +2,7 @@
 // Please do not edit.
 goog.addDependency('../../../../../app/assets/js/pf/observable.js', ['pf.interface.Observable'], ['pf.interface.Observer'], false);
 goog.addDependency('../../../../../app/assets/js/pf/observer.js', ['pf.interface.Observer'], [], false);
+goog.addDependency('../../../../../app/components/clock/clock.js', ['pf.Clock'], [], false);
+goog.addDependency('../../../../../app/components/clock/clock.module.js', ['pf.Clock.module'], ['pf.Clock'], false);
 goog.addDependency('../../../../../app/states/evolution/evolution.module.js', ['evolution.states.module'], ['evolution.states.firstController'], false);
 goog.addDependency('../../../../../app/states/evolution/first.controller.js', ['evolution.states.firstController'], [], false);
