@@ -85,6 +85,7 @@ gulp.task('jshint', function() {
 	return gulp.src('app/**/*.js')
 		.pipe(jshint({
 			devel: true,
+			browser: true,
 			globals: {
 				'angular': false,
 				'goog': false,
@@ -97,7 +98,7 @@ gulp.task('jshint', function() {
 });
 
 gulp.task('watch', function() {
-	gulp.watch(['app/**/*.js', '!app/deps.js'], ['jshint', 'closure-depswriter', 'closure-compiler']);
+	gulp.watch(['app/**/*.js', '!app/deps.js', '!app/autoLoadDeps.js'], ['jshint', 'closure-depswriter', 'closure-compiler']);
 });
 
 

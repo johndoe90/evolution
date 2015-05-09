@@ -16,5 +16,5 @@ angular.module('evolution', [
  * @ngInject
  */
 function config($urlRouterProvider) {
-	console.log('DONE');
+	console.log('Configure main module');
 }
