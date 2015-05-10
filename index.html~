@@ -5,7 +5,6 @@
 		<title>Evolution</title>
 
 		<!-- inject:css -->
-		<link rel="stylesheet" href="/app/components/clock/clockDirective.css">
 		<!-- endinject -->
 
 		<!-- inject:js -->

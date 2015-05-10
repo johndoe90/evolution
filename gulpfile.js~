@@ -69,7 +69,7 @@ gulp.task('closure-compiler', function() {
 gulp.task('inject', function() {
 	var target = gulp.src('index.html');
 	var sources = gulp.src([
-		// javascript sources
+		//javascript sources
 		'closure/closure-library/closure/goog/base.js',
 		'node_modules/angular/angular.js',
 		'node_modules/angular-ui-router/release/angular-ui-router.js',
@@ -77,11 +77,10 @@ gulp.task('inject', function() {
 		'app/autoLoadDeps.js',
 		'app/app.module.js',
 
-		// css sources
+		//css sources
 		'app/**/*.css'
 	], {read: false});
 
-	// inject into index.html
 	return target.pipe(inject(sources))
 		.pipe(gulp.dest('./'));
 });
