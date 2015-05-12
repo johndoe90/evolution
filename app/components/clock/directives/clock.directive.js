@@ -60,37 +60,39 @@ pf.Clock.clockDirective.prototype.notify = function(data) {
 };
 
 /**
- * Linking function for this directive
- * @this {pf.Clock.clockDirective}
- * @param  {angular.Scope} scope
- * @param  {angular.JQLite} elem 
- * @param  {angular.Attributes} attrs
- */
-pf.Clock.clockDirective.prototype.link = function(scope, elem, attrs) {
-	this.scope_ = scope;
-	this.elem_ = elem;
-	this.attrs_ = attrs;
-
-	scope.time = this.time_;
-
-	//on destroy, remove the directive from the list of observers
-	scope.$on('$destroy', function(){
-		this.subject_.unregisterObserver(this);
-	}.bind(this));
-};
-
-/**
  * Factory which returns a new clock directive
  * @param {!pf.Clock} clock 
  * @ngInject
  */
-pf.Clock.clockDirective.factory = function(clock) {
+pf.Clock.clockDirective.factory = function(clock, CLOCK_ROOT, CLOCK_PARTIALS) {
+	
+	/**
+	 * Linking function for this directive
+	 * @this {pf.Clock.clockDirective}
+	 * @param  {angular.Scope} scope
+	 * @param  {angular.JQLite} elem 
+	 * @param  {angular.Attributes} attrs
+	 */
+	var link = function(scope, elem, attrs) {
+		this.scope_ = scope;
+		this.elem_ = elem;
+		this.attrs_ = attrs;
+
+		scope.time = this.time_;
+		scope.CLOCK_ROOT = CLOCK_ROOT;
+
+		//on destroy, remove the directive from the list of observers
+		scope.$on('$destroy', function(){
+			this.subject_.unregisterObserver(this);
+		}.bind(this));
+	};
+
 	var dir = new pf.Clock.clockDirective(clock);
 
 	return {
 		replace: true,
 		restrict: 'EA',
-		link: pf.Clock.clockDirective.prototype.link.bind(dir),
-		template: '<div>The time is {{time.getHours()}} {{time.getMinutes()}} {{time.getSeconds()}}</div>'
+		link: link.bind(dir),
+		templateUrl: CLOCK_PARTIALS + 'clock.directive.partial.html'
 	};
 };
